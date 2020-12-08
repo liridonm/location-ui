@@ -1,0 +1,57 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <div class="location-wrapper">
+    <div class="create-button-wrap w-100">
+      <button class="btn btn-primary create-btn" (click)="onCreate()">Create</button>
+    </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Latitude</th>
+        <th scope="col">Longitude</th>
+        <th scope="col">City</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let location of locations">
+        <td (click)="onLocationDetails(location.id)" class="pointer">{{location.id}}</td>
+        <td (click)="onLocationDetails(location.id)" class="pointer">{{location.name}}</td>
+        <td (click)="onLocationDetails(location.id)" class="pointer">{{location.address}}</td>
+        <td (click)="onLocationDetails(location.id)" class="pointer">{{location.latitude}}</td>
+        <td (click)="onLocationDetails(location.id)" class="pointer"> {{location.longitude}}</td>
+        <td (click)="onLocationDetails(location.id)" class="pointer">{{location.city?.name}}</td>
+        <td><a class="pointer" (click)="openModal(location.id)">Delete</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Delete Location:</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="showModal = false">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p>Are you sure you want to delete?</p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="onDelete()">Delete</button>
+      </div>
+
+    </div>
+  </div>
+</div>

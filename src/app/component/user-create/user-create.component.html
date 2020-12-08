@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="main-wrapper">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h4>Register</h4>
+      <div class="form-group mb-2">
+        <label>Email</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="Email">
+      </div>
+
+      <div class="form-group mb-2">
+        <label>Username</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="Username">
+      </div>
+
+      <div class="form-group mb-2">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">
+        <span>Create</span>
+      </button>
+
+    </form>
+  </div>
+</div>

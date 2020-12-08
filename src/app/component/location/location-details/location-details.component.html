@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+
+<div class="container" *ngIf="location">
+  <div class="location-wrapper">
+    <div class="create-button-wrap w-100">
+      <button class="btn btn-primary create-btn" (click)="onUpdate()">Edit</button>
+    </div>
+      <div class="form-group mb-2">
+        <label>Name</label>
+        <input type="text" class="form-control" [value]="location.name" readonly>
+      </div>
+
+      <div class="form-group mb-2">
+        <label>Address</label>
+        <input type="text" class="form-control" value="{{location.address}}" readonly>
+      </div>
+
+      <div class="form-group mb-2">
+        <label>Longitude</label>
+        <input type="number" class="form-control" value="{{location.longitude}}" readonly>
+      </div>
+
+      <div class="form-group mb-2">
+        <label>Latitude</label>
+        <input type="number" class="form-control" value="{{location.latitude}}" readonly>
+      </div>
+
+      <div class="form-group mb-2">
+        <label>City</label>
+        <input type="text" class="form-control" value="{{location.city?.name}}" readonly>
+
+      </div>
+  </div>
+</div>
